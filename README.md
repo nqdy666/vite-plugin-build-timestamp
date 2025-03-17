@@ -31,8 +31,6 @@ export default {
 }
 ```
 
-Changes to `target.js` or `target.ts` will now restart the proxy without restarting Vite.
-
 ## License
 
 MIT License © 2025 [nianqin](https://github.com/nqdy666)
