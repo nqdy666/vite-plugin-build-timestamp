@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@9.14.2",
-  "description": "Hot update target without restarting Vite",
+  "description": "Generate a meta tag with the build time in the head of the HTML during the build process",
   "author": "nianqin",
   "license": "MIT",
   "homepage": "https://github.com/nqdy666/vite-plugin-build-timestamp",
