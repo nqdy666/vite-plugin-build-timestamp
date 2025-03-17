@@ -23,7 +23,7 @@ function VitePluginBuildTimestamp(options: VitePluginBuildTimestampOptions = {})
     enable = true,
     log = false,
     name = 'build-timestamp',
-    format
+    format,
   } = options
 
   return {
@@ -31,17 +31,18 @@ function VitePluginBuildTimestamp(options: VitePluginBuildTimestampOptions = {})
     apply: 'build',
     transformIndexHtml(html) {
       if (!enable) {
-        return html;
+        return html
       }
-      let timestamp: string = new Date().getTime().toString();
+      let timestamp: string = new Date().getTime().toString()
       if (typeof format === 'function') {
-        timestamp = format(new Date());
-      } else if (typeof format === 'string') {
-        timestamp = dayjs().format(format);
+        timestamp = format(new Date())
       }
-   
+      else if (typeof format === 'string') {
+        timestamp = dayjs().format(format)
+      }
+
       if (log) {
-        console.log(`\n${name}: ${timestamp}`);
+        console.log(`\n${name}: ${timestamp}`)
       }
       return {
         html,
@@ -50,11 +51,11 @@ function VitePluginBuildTimestamp(options: VitePluginBuildTimestampOptions = {})
             tag: 'meta',
             attrs: {
               name,
-              content: timestamp
+              content: timestamp,
             },
-            injectTo: 'head'
-          }
-        ]
+            injectTo: 'head',
+          },
+        ],
       }
     },
   }
